@@ -115,12 +115,12 @@ const skills = {
   ],
   softSkills: [
     { name: "Creativity", value: 90 },
-    { name: "Goal-Oriented", value: 80 },
+    { name: "Autonomy", value: 95 },
     { name: "Quick learning", value: 80 },
     { name: "Adaptability", value: 85 },
     { name: "Problem Solving", value: 80 },
     { name: "Teamwork", value: 85 },
-    { name: "Organization", value: 70 },
+    { name: "Organization", value: 75 },
     { name: "Agile mindset", value: 80 },
   ]
 };
