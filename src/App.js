@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { BrowserRouter } from "react-router-dom";
+import { getInTouch } from "./editable-stuff/config.js";
+import Footer from "./components/Footer";
+import Navbar from "./components/Navbar";
+import GetInTouch from "./components/home/GetInTouch.jsx";
+import Home from "./components/Home";
 
-function App() {
+const App = () => {
+  const titleRef = React.useRef();
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter basename={process.env.PUBLIC_URL + "/"}>
+     <Navbar ref={titleRef}/>
+        <Home ref={titleRef}/>
+      <Footer>
+        {getInTouch.show && (
+          <GetInTouch
+            heading={getInTouch.heading}
+            message={getInTouch.message}
+            email={getInTouch.email}
+          />
+        )}
+      </Footer>
+    </BrowserRouter>
   );
-}
+};
 
 export default App;
